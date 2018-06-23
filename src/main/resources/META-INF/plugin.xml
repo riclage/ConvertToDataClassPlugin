@@ -1,0 +1,24 @@
+<idea-plugin>
+    <id>com.riclage.plugin.dataclass</id>
+    <name>Plugin to convert an abstract class to data class</name>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <!--depend on kotlin plugin-->
+    <depends optional="true">org.jetbrains.kotlin</depends>
+
+    <actions>
+        <group id="MyPlugin.ActionExample" text="Plugin Action Example">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="Myplugin.ToDataClass" class="ConvertFromAutoValueToDataClassAction" text="Convert to Data Class"/>
+        </group>
+    </actions>
+</idea-plugin>

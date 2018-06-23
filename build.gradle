@@ -1,0 +1,45 @@
+buildscript {
+    ext.kotlin_version = '1.2.41'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.3.2'
+}
+
+apply plugin: "idea"
+apply plugin: "kotlin"
+apply plugin: "org.jetbrains.intellij"
+
+group 'com.riclage'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compileOnly("org.jetbrains.kotlin:kotlin-compiler:$kotlin_version")
+}
+
+intellij {
+    version '2018.1.4'
+}
+patchPluginXml {
+    changeNotes """
+      First release
+      """
+}
